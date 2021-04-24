@@ -3,7 +3,10 @@ begins:
 	Building configuration
 	Current configuration
 	version
-	service
+	service timestamps
+	service timestamps
+	service password-encryption
+	service call-home
 	platform
 	hostname
 	vrf definition Mgmt-vrf
@@ -13,6 +16,7 @@ begins:
 	aaa session-id common
 	boot system
 	ip routing
+	ip domain name
 	login on-success log
 	vtp mode transparent
 	mpls
