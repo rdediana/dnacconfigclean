@@ -1,0 +1,224 @@
+no 
+no 
+no vrf definition IOTAV_VN
+no vrf definition PROD_VN
+no vrf definition SEC_VN
+no vrf definition UNTRUST_VN
+no ip dhcp relay information option
+no ip dhcp snooping vlan 1023
+no ip dhcp snooping
+no device-sensor filter-list lldp list iseLLDP
+no device-sensor filter-list dhcp list iseDHCP
+no device-sensor filter-list cdp list iseCDP
+no device-sensor filter-spec dhcp include list iseDHCP
+no device-sensor filter-spec lldp include list iseLLDP
+no device-sensor filter-spec cdp include list iseCDP
+no device-sensor notify all-changes
+no access-session attributes filter-list list Def_Acct_List
+no access-session accounting attributes filter-spec include list Def_Acct_List
+no access-session interface-template sticky timer 30
+no access-session acl default passthrough
+no dot1x system-auth-control
+no dot1x critical eapol
+no errdisable recovery cause udld
+no errdisable recovery cause bpduguard
+no errdisable recovery cause security-violation
+no errdisable recovery cause channel-misconfig
+no errdisable recovery cause pagp-flap
+no errdisable recovery cause dtp-flap
+no errdisable recovery cause link-flap
+no errdisable recovery cause sfp-config-mismatch
+no errdisable recovery cause gbic-invalid
+no errdisable recovery cause l2ptguard
+no errdisable recovery cause psecure-violation
+no errdisable recovery cause port-mode-failure
+no errdisable recovery cause dhcp-rate-limit
+no errdisable recovery cause pppoe-ia-rate-limit
+no errdisable recovery cause mac-limit
+no errdisable recovery cause storm-control
+no errdisable recovery cause inline-power
+no errdisable recovery cause arp-inspection
+no errdisable recovery cause link-monitor-failure
+no errdisable recovery cause oam-remote-failure
+no errdisable recovery cause loopback
+no errdisable recovery cause psp
+no errdisable recovery cause mrp-miscabling
+no errdisable recovery cause loopdetect
+no vlan 1023
+no vlan 2046
+no vlan 3001
+no vlan 3002
+no vlan 3003
+no vlan 3004
+no vlan 3005
+no lldp run
+no class-map type control subscriber match-all AAA_SVR_DOWN_AUTHD_HOST
+no class-map type control subscriber match-all AAA_SVR_DOWN_UNAUTHD_HOST
+no class-map type control subscriber match-all AUTHC_SUCCESS-AUTHZ_FAIL
+no class-map type control subscriber match-all DOT1X
+no class-map type control subscriber match-all DOT1X_FAILED
+no class-map type control subscriber match-all DOT1X_MEDIUM_PRIO
+no class-map type control subscriber match-all DOT1X_NO_RESP
+no class-map type control subscriber match-all DOT1X_TIMEOUT
+no class-map type control subscriber match-any IN_CRITICAL_AUTH
+no class-map type control subscriber match-any IN_CRITICAL_AUTH_CLOSED_MODE
+no class-map type control subscriber match-all MAB
+no class-map type control subscriber match-all MAB_FAILED
+no class-map type control subscriber match-none NOT_IN_CRITICAL_AUTH
+no class-map type control subscriber match-none NOT_IN_CRITICAL_AUTH_CLOSED_MODE
+no class-map match-any system-cpp-police-ewlc-control
+no class-map match-any system-cpp-police-topology-control
+no class-map match-any system-cpp-police-sw-forward
+no class-map match-any system-cpp-default
+no class-map match-any system-cpp-police-sys-data
+no class-map match-any system-cpp-police-punt-webauth
+no class-map match-any system-cpp-police-l2lvx-control
+no class-map match-any system-cpp-police-forus
+no class-map match-any system-cpp-police-multicast-end-station
+no class-map match-any system-cpp-police-high-rate-app
+no class-map match-any system-cpp-police-multicast
+no class-map match-any system-cpp-police-l2-control
+no class-map match-any system-cpp-police-dot1x-auth
+no class-map match-any system-cpp-police-data
+no class-map match-any system-cpp-police-stackwise-virt-control
+no class-map match-any system-cpp-police-routing-control
+no class-map match-any system-cpp-police-protocol-snooping
+no class-map match-any system-cpp-police-dhcp-snooping
+no class-map match-any system-cpp-police-ios-routing
+no class-map match-any system-cpp-police-system-critical
+no class-map match-any system-cpp-police-ios-feature
+no policy-map type control subscriber PMAP_DefaultWiredDot1xClosedAuth_1X_MAB
+no policy-map type control subscriber PMAP_DefaultWiredDot1xClosedAuth_MAB_1X
+no policy-map type control subscriber PMAP_DefaultWiredDot1xLowImpactAuth_1X_MAB
+no policy-map type control subscriber PMAP_DefaultWiredDot1xLowImpactAuth_MAB_1X
+no policy-map type control subscriber PMAP_DefaultWiredDot1xOpenAuth_1X_MAB
+no policy-map type control subscriber PMAP_DefaultWiredDot1xOpenAuth_MAB_1X
+no policy-map system-cpp-policy
+no autoconf enable
+no template DefaultWiredDot1xClosedAuth
+no template DefaultWiredDot1xLowImpactAuth
+no interface LISP0
+no interface LISP0.4097
+no interface LISP0.4099
+no interface LISP0.4100
+no interface LISP0.4101
+no interface LISP0.4102
+no interface Vlan3001
+no interface Vlan3002
+no interface Vlan3003
+no interface Vlan3004
+no interface Vlan3005
+no router lisp
+no router bgp 65031
+no ip access-list extended IPV4_CRITICAL_AUTH_ACL
+no ip access-list extended IPV4_PRE_AUTH_ACL
+no ip prefix-list deny_0.0.0.0 seq 10 permit 0.0.0.0/0
+no ip prefix-list l3handoff-prefixes seq 473207300 permit 10.20.5.0/30
+no ip prefix-list l3handoff-prefixes seq 473355268 permit 10.20.5.4/30
+no ip prefix-list l3handoff-prefixes seq 473503236 permit 10.20.5.8/30
+no ip prefix-list l3handoff-prefixes seq 492776068 permit 10.20.5.12/30
+no ip prefix-list l3handoff-prefixes seq 492924036 permit 10.20.5.16/30
+no route-map deny_0.0.0.0 deny 25 
+no route-map deny_0.0.0.0 permit 30 
+no snmp-server community public RO
+no snmp-server community private RW
+no snmp-server enable traps snmp authentication linkdown linkup coldstart warmstart
+no snmp-server enable traps flowmon
+no snmp-server enable traps entity-perf throughput-notif
+no snmp-server enable traps call-home message-send-fail server-fail
+no snmp-server enable traps tty
+no snmp-server enable traps ospf state-change
+no snmp-server enable traps ospf errors
+no snmp-server enable traps ospf retransmit
+no snmp-server enable traps ospf lsa
+no snmp-server enable traps ospf cisco-specific state-change nssa-trans-change
+no snmp-server enable traps ospf cisco-specific state-change shamlink interface
+no snmp-server enable traps ospf cisco-specific state-change shamlink neighbor
+no snmp-server enable traps ospf cisco-specific errors
+no snmp-server enable traps ospf cisco-specific retransmit
+no snmp-server enable traps ospf cisco-specific lsa
+no snmp-server enable traps eigrp
+no snmp-server enable traps auth-framework sec-violation
+no snmp-server enable traps rep
+no snmp-server enable traps vtp
+no snmp-server enable traps vlancreate
+no snmp-server enable traps vlandelete
+no snmp-server enable traps port-security
+no snmp-server enable traps license
+no snmp-server enable traps smart-license
+no snmp-server enable traps cpu threshold
+no snmp-server enable traps memory bufferpeak
+no snmp-server enable traps stackwise
+no snmp-server enable traps udld link-fail-rpt
+no snmp-server enable traps udld status-change
+no snmp-server enable traps fru-ctrl
+no snmp-server enable traps flash insertion removal lowspace
+no snmp-server enable traps energywise
+no snmp-server enable traps power-ethernet group 1 threshold 80
+no snmp-server enable traps power-ethernet police
+no snmp-server enable traps entity
+no snmp-server enable traps pw vc
+no snmp-server enable traps mvpn
+no snmp-server enable traps envmon
+no snmp-server enable traps cef resource-failure peer-state-change peer-fib-state-change inconsistency
+no snmp-server enable traps lisp
+no snmp-server enable traps isis
+no snmp-server enable traps ipsla
+no snmp-server enable traps entity-diag boot-up-fail hm-test-recover hm-thresh-reached scheduled-test-fail
+no snmp-server enable traps bfd
+no snmp-server enable traps ike policy add
+no snmp-server enable traps ike policy delete
+no snmp-server enable traps ike tunnel start
+no snmp-server enable traps ike tunnel stop
+no snmp-server enable traps ipsec cryptomap add
+no snmp-server enable traps ipsec cryptomap delete
+no snmp-server enable traps ipsec cryptomap attach
+no snmp-server enable traps ipsec cryptomap detach
+no snmp-server enable traps ipsec tunnel start
+no snmp-server enable traps ipsec tunnel stop
+no snmp-server enable traps ipsec too-many-sas
+no snmp-server enable traps config-copy
+no snmp-server enable traps config
+no snmp-server enable traps config-ctid
+no snmp-server enable traps dhcp
+no snmp-server enable traps event-manager
+no snmp-server enable traps hsrp
+no snmp-server enable traps ipmulticast
+no snmp-server enable traps msdp
+no snmp-server enable traps ospfv3 state-change
+no snmp-server enable traps ospfv3 errors
+no snmp-server enable traps pim neighbor-change rp-mapping-change invalid-pim-message
+no snmp-server enable traps bridge newroot topologychange
+no snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+no snmp-server enable traps syslog
+no snmp-server enable traps bgp cbgp2
+no snmp-server enable traps nhrp nhs
+no snmp-server enable traps nhrp nhc
+no snmp-server enable traps nhrp nhp
+no snmp-server enable traps nhrp quota-exceeded
+no snmp-server enable traps mpls rfc ldp
+no snmp-server enable traps mpls ldp
+no snmp-server enable traps mpls rfc traffic-eng
+no snmp-server enable traps mpls traffic-eng
+no snmp-server enable traps mpls fast-reroute protected
+no snmp-server enable traps local-auth
+no snmp-server enable traps vlan-membership
+no snmp-server enable traps errdisable
+no snmp-server enable traps rf
+no snmp-server enable traps transceiver all
+no snmp-server enable traps bulkstat collection transfer
+no snmp-server enable traps mac-notification change move threshold
+no snmp-server enable traps vrfmib vrf-up vrf-down vnet-trunk-up vnet-trunk-down
+no snmp-server enable traps mpls vpn
+no snmp-server enable traps mpls rfc vpn
+no ipv6 access-list IPV6_CRITICAL_AUTH_ACL
+no ipv6 access-list IPV6_PRE_AUTH_ACL
+no cts role-based enforcement vlan-list 1023
+no wireless management interface Loopback0
+no wireless profile policy lab-corp_Global_F_1f8d2b8a
+no wireless fabric
+no wireless fabric name PROD_VN_B2 l2-vnid 8190 control-plane-name default-control-plane
+no wlan lab-corp_Global_F_1f8d2b8a 17 lab-corp
+no network-assurance na-certificate PROTOCOL_HTTP 10.7.16.18 /ca/ pem
+no end
+no 

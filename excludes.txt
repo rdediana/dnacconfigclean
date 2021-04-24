@@ -1,0 +1,93 @@
+! ------- default excludes ---------
+begins:
+	Building configuration
+	Current configuration
+	version
+	service
+	platform
+	hostname
+	vrf definition Mgmt-vrf
+	aaa new-model
+	switch
+	aaa authorization exec default local
+	aaa session-id common
+	boot system
+	ip routing
+	login on-success log
+	vtp mode transparent
+	mpls
+	no device-tracking logging theft
+	wireless-controller
+	crypto pki
+	system mtu 9100
+	license
+	device classifier
+	diagnostic
+	spanning-tree
+	memory free
+	username
+	redundancy
+	transceiver
+	interface GigabitEthernet
+	interface TenGigabitEthernet
+	interface FortyGigabitEthernet
+	interface TwentyFiveGig
+	interface AppGigabitEthernet1/0/1
+	AppGigabitEthernet
+	interface Vlan1
+	ip http client source-interface
+	ip route
+	ip ssh
+	ip community-list
+	control-plane
+	line
+	netconf-yang
+	template AP_INTERFACE_TEMPLATE
+	template DMP_INTERFACE_TEMPLATE
+	template DefaultWiredDot1xOpenAuth
+	template IP_CAMERA_INTERFACE_TEMPLATE
+	template IP_PHONE_INTERFACE_TEMPLATE
+	template LAP_INTERFACE_TEMPLATE
+	template TP_INTERFACE_TEMPLATE
+	wireless aaa policy default-aaa-policy
+	wireless cts-sxp profile default-sxp-profile
+	wireless profile airtime-fairness default-atf-policy 0
+	wireless profile flex default-flex-profile
+	wireless profile mesh default-mesh-profile
+	wireless profile policy default-policy-profile
+	wireless tag site default-site-tag
+	wireless tag policy default-policy-tag
+	wireless tag rf default-rf-tag
+	ap dot11 24ghz rf-profile Low_Client_Density_rf_24gh
+	ap dot11 24ghz rf-profile High_Client_Density_rf_24gh
+	ap dot11 24ghz rf-profile Typical_Client_Density_rf_24gh
+	ap dot11 24ghz rate RATE_12M supported
+	ap dot11 24ghz rate RATE_24M supported
+	ap dot11 24ghz rate RATE_6M supported
+	ap dot11 5ghz rf-profile Low_Client_Density_rf_5gh
+	ap dot11 5ghz rf-profile High_Client_Density_rf_5gh
+	ap dot11 5ghz rf-profile Typical_Client_Density_rf_5gh
+	ap dot11 5ghz rate RATE_12M mandatory
+	ap dot11 5ghz rate RATE_24M mandatory
+	ap dot11 5ghz rate RATE_6M mandatory
+	wireless fabric control-plane default-control-plane
+	ap country CA
+	ap profile default-ap-profile
+	parameter-map type subscriber attribute-to-service BUILTIN_DEVICE_TO_TEMPLATE
+
+contains:
+	#
+	ip forward-protocol
+	ip http server
+	ip http secure-server
+	logging console
+
+! ------- custom excludes ---------
+
+begins:
+	! use tabs to indent
+	interface Loopback0
+	vlan 101
+
+contains:
+	! use tabs to indent
